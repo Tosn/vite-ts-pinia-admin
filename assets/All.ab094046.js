@@ -1,0 +1,1 @@
+import{_ as e}from"./index.19f231ee.js";import{o as r,j as o}from"./vendor.4aa86fef.js";const a={};function c(l,t){return r(),o("div",null," all Table ")}var s=e(a,[["render",c]]);export{s as default};
