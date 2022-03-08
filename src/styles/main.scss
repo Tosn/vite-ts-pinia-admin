@@ -1,0 +1,90 @@
+.layout-section {
+  height: 100vh;
+  display: flex;
+  .layout-menu {
+    background-color: var(--el-menu-bg-color);
+    transition: width .3s;
+    display: flex;
+    flex-direction: column;
+    .el-menu {
+      border-right: none;
+    }
+    .project-menu {
+      @include hiddenScrollBar();
+      flex: 1;
+      overflow-y: auto;
+      // transition: all .3s;
+    }
+    .project-name {
+      .logo {
+        max-width: 20px;
+        max-height: 20px;
+      }
+      // overflow: hidden;
+      // white-space: nowrap;
+      padding: 12px 10px;
+      text-align: center;
+      background-color: #33383c;
+      color: var(--tt-color-white);
+      // font-weight: bold;
+      font-size: 16px;
+    }
+    &.w-200 {
+      width: 200px;
+    }
+    &.w-64 {
+      width: 64px;
+    }
+  }
+  .layout-article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .header-bread {
+      height: $--header-bread-height;
+      padding: 0 var(--tt-padding-space);
+      @include flex();
+      color: var(--tt-color-666);
+      .bread-text {
+        @include flex(center, flex-start);
+      }
+    }
+    .header-tags {
+      height: $--header-tag-height;
+      border-top: 1px solid var(--tt-border-color);
+      @include flex(center, flex-start);
+      ul {
+        @include flex(flex-end, flex-start);
+        padding: 0 var(--tt-padding-space);
+        height: 100%;
+        li {
+          cursor: pointer;
+          font-size: 12px;
+          height: 26px;
+          @include flex();
+          padding: 0 5px;
+          border-width: 15px 27px;
+          border-style: solid;
+          margin: 0 -15px;
+          border-color: transparent;
+          border-radius: 2px;
+          position: relative;
+          &.current {
+            color: var(--el-color-primary);
+          }
+          &:hover, &.current {
+            background-color: var(--el-color-primary-light-9);
+            -webkit-mask-box-image: url("#{$images}/header-tag.svg") 12 27 15;
+          }
+        }
+      }
+    }
+    .layout-content {
+      border-top: 1px solid var(--tt-border-color);
+      flex: 1;
+      overflow-y: auto;
+      background-color: var(--tt-main-bg-color);
+      padding: var(--tt-padding-space);
+    }
+  }
+}

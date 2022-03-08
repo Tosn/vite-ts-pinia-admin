@@ -1,0 +1,16 @@
+
+$images: '../assets/images';
+$--menu-width: 220px;
+$--header-bread-height: 50px;
+$--header-tag-height: 34px;
+$--header-height: $--header-bread-height + $--header-tag-height;
+
+:root {
+  --tt-color-white: #fff;
+  --tt-color-333: #333;
+  --tt-color-666: #666;
+  --tt-color-999: #999;
+  --tt-padding-space: 15px;
+  --tt-border-color: #f1f2f3;
+  --tt-main-bg-color: #f8f8f8;
+}

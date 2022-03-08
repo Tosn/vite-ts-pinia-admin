@@ -1,0 +1,42 @@
+@mixin textEllipsis ($lineCap: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $lineCap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-break: keep-all;
+}
+
+// 影藏滚动条
+@mixin hiddenScrollBar () {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+}
+
+// 图片比例
+@mixin imagebox {
+  width: 100%;
+  position: relative;
+  padding-bottom: 150%; 
+  img {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+.imagebox {
+  @include imagebox()
+}
+
+// flex 常见布局
+@mixin flex ($align-items: center, $justify-content: space-between, $flex-direction: row, $flex-wrap: nowrap) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+  flex-wrap: $flex-wrap;
+}
