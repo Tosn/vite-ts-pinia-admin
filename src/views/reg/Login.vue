@@ -32,8 +32,9 @@
 import { reactive } from 'vue';
 import { systemName } from '@/settings';
 import { loginIn } from '@/api';
-// import { useRouter } from 'vue-router'
-// const router = useRouter()
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 const rules = reactive({
   email: [
     { required: true, message: 'Please input email' },
@@ -50,9 +51,9 @@ const userInfo = reactive({
 
 const submitForm = () => {
   loginIn(userInfo);
-  // router.push({
-  //   path: '/'
-  // })
+  router.push({
+    path: '/',
+  });
 };
 
 </script>
