@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/vite-ts-pinia-admin', // github action need, can remove
+  // base: '/vite-ts-pinia-admin', // github action need, can remove
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/src'),

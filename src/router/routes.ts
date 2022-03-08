@@ -55,7 +55,11 @@ export const asyncRoutes:Array<RouteRecordRaw> = [
 
 export const staticRoutes: Array<RouteRecordRaw> = [
   {
-    path: '/:w+',
-    redirect: '/',
+    path: '/login',
+    component: () => import('@/views/reg/Login.vue')
   },
+  // {
+  //   path: '/:w+',
+  //   redirect: '/',
+  // },
 ];

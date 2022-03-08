@@ -9,4 +9,9 @@ export const checkObjectInList = (item: ObjAny, list: ObjAny[]): boolean => {
   return false;
 };
 
+// 统一延迟方法
+export const fnDelay = (fn: Function, delay: number = 500) => {
+  setTimeout(fn, delay)
+}
+
 export default {};
