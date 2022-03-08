@@ -29,32 +29,31 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-import { systemName } from '@/settings'
-import { loginIn } from '@/api'
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import { reactive } from 'vue';
+import { systemName } from '@/settings';
+import { loginIn } from '@/api';
+// import { useRouter } from 'vue-router'
+// const router = useRouter()
 const rules = reactive({
   email: [
-    { required: true, message: 'Please input email' }
+    { required: true, message: 'Please input email' },
   ],
   password: [
-    { required: true, message: 'Please input password' }
-  ]
-})
+    { required: true, message: 'Please input password' },
+  ],
+});
 
 const userInfo = reactive({
   email: '',
-  password: ''
-})
+  password: '',
+});
 
 const submitForm = () => {
-  loginIn(userInfo)
-  router.push({
-    path: '/'
-  })
-}
-
+  loginIn(userInfo);
+  // router.push({
+  //   path: '/'
+  // })
+};
 
 </script>
 

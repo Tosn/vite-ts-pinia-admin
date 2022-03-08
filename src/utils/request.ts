@@ -4,9 +4,8 @@ import axios, {
   AxiosResponse,
 } from 'axios';
 import { ElMessage } from 'element-plus';
-import { fnDelay } from '@/utils/public'
-import router from '@/router'
-
+import { fnDelay } from '@/utils/public';
+// import { loginOut } from './login';
 // interface AxiosResponseSelf<AxiosResponseType> extends AxiosResponse<AxiosResponseType>
 
 const axiosInstance: AxiosInstance = axios.create({
@@ -16,28 +15,25 @@ const axiosInstance: AxiosInstance = axios.create({
 axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => config, (error: any) => Promise.reject(error));
 
 axiosInstance.interceptors.response.use(
-  (response: AxiosResponse<AxiosResponseType>) => response, 
+  (response: AxiosResponse<AxiosResponseType>) => response,
   (error: any) => {
-    console.log('error', error.response.status)
-    const errorCode: number = error.response.status
+    const errorCode: number = error.response.status;
     switch (errorCode) {
       case 401:
         ElMessage({
           type: 'error',
-          message: '请先登录'
-        })
+          message: '请先登录',
+        });
         fnDelay(() => {
-          router.push({
-            path: '/login'
-          })
-        })
+          // loginOut()
+        });
         break;
       default:
-        Promise.reject(error)
+        Promise.reject(error);
         break;
     }
-    // Promise.reject(error)
-  });
+  },
+);
 
 const defaultParams = {}; // 默认参数
 
