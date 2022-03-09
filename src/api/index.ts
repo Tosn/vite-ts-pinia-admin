@@ -1,9 +1,10 @@
-import { $post, $get } from '@/utils/request'
+import { $post, $get } from '@/utils/request';
 
-export const loginIn = <T>(params: T) => $post('/api/login', params)
+const MockPrefix = (import.meta.env.MODE === 'development') ? '/mock' : '';
+export const loginIn = <T>(params: T) => $post('/api/login', params);
 
-export const getUserInfo = () => $get('/api/user')
+export const getUserInfo = () => $get(`${MockPrefix}/user`);
 
 export default {
 
-}
+};
