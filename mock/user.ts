@@ -1,3 +1,5 @@
+import Mock from 'mockjs';
+// http://mockjs.com/examples.html
 export default [
   {
     url: '/mock/user',
@@ -5,10 +7,11 @@ export default [
     response: () => ({
       code: 0,
       message: 'ok',
-      data: {
-        name: 'Tosn',
-        email: 'Tson@webeye.cn',
-      },
+      data: Mock.mock({
+        id: '@id',
+        name: '@name',
+        email: '@email',
+      }),
     }),
   },
 ];
