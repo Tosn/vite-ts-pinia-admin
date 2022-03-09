@@ -14,13 +14,9 @@ const getParams = (params: ObjAny) => {
   Object.keys(params).forEach((key) => {
     searchData[key] = params[key];
   });
-  // for (let key in params) {
-  //   searchData[key] = params[key]
-  // }
 };
 const SearchRef = ref();
 const submit = () => {
-  console.log(SearchRef.value);
   SearchRef.value.checkForm().then((res: any) => {
     console.log(res);
   });

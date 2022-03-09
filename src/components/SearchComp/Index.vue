@@ -82,9 +82,6 @@ const setDefaultValue = () => {
   Object.keys(props.defaultData).forEach((key) => {
     searchData[key] = props.defaultData[key];
   });
-  // for (let key in props.defaultData) {
-  //   searchData[key] = props.defaultData[key]
-  // }
 };
 
 setDefaultValue();
