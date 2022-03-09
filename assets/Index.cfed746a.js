@@ -1,0 +1,1 @@
+import{g as n}from"./index.d8827539.js";import{g as o,o as t,j as s}from"./vendor.b029d1a3.js";const i=o({setup(c){return(async()=>{const e=await n();console.log(e)})(),(e,r)=>(t(),s("div",null," page index "))}});export{i as default};
