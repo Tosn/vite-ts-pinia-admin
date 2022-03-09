@@ -14,4 +14,18 @@ export default [
       }),
     }),
   },
+  {
+    url: '/mock/tags',
+    method: 'GET',
+    response: () => ({
+      code: 0,
+      message: 'ok',
+      data: Mock.mock({
+        'list|6': [{
+          label: '@word(3)',
+          value: '@increment',
+        }],
+      }),
+    }),
+  },
 ];
