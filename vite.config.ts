@@ -8,7 +8,6 @@ const VITE_PORT = 3333;
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), viteMockServe()],
-  // base: '/vite-ts-pinia-admin', // github action need, can remove
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/src'),
