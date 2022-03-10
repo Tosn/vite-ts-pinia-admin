@@ -4,7 +4,7 @@ import { asyncRoutes, staticRoutes } from './routes';
 import 'nprogress/nprogress.css';
 
 NProgress.configure({ showSpinner: false });
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
   ...asyncRoutes,
   ...staticRoutes,
 ];

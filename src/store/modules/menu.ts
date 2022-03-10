@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
-import router from '@/router';
+import router, { routes } from '@/router';
 
+const homeRoute: MenuTag = { path: routes[0].path, name: routes[0].meta?.name as string, canClose: false };
 export const useMenuStore = defineStore({
   id: 'menu',
   state(): {
@@ -10,7 +11,7 @@ export const useMenuStore = defineStore({
     return {
       isCollapse: false, // 是否折叠菜单
       tagList: [
-        { path: '/', name: '首页', canClose: false },
+        homeRoute,
       ],
     };
   },
