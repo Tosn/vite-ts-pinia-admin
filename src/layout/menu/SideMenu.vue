@@ -37,7 +37,7 @@ const route = useRoute();
 const menuStore = useMenuStore();
 
 const getDefaultActive = () => {
-  defaultActive.value = route.fullPath;
+  defaultActive.value = route.path;
 };
 onBeforeMount(() => {
   getDefaultActive();
