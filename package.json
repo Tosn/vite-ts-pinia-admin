@@ -4,9 +4,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:test": "vite build --mode test",
     "serve": "vite preview",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "deploy:test": "npm run build:test && bash ./deploy-dev.sh",
+    "deploy": "npm run build && bash ./deploy-prod.sh"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^1.1.0",
