@@ -2,12 +2,13 @@ import { defineConfig } from 'vite';
 import { viteMockServe } from 'vite-plugin-mock';
 import path from 'path';
 import vue from '@vitejs/plugin-vue';
+import viteCompression from 'vite-plugin-compression';
 
 const VITE_PORT = 3333;
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), viteMockServe()],
+  plugins: [vue(), viteMockServe(), viteCompression() as any], // as any 处理报错，暂未查到解决方案
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/src'),
