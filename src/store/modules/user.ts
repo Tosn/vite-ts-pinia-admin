@@ -1,14 +1,23 @@
 import { defineStore } from 'pinia';
 import { store } from '@/store';
+import { getUserInfo } from '@/api';
+import { getToken, removeToken } from '@/utils/token';
 
 export const useUserStore = defineStore({
   id: 'user',
   state: () => ({
-    name: 'Tosn',
+    userInfo: {},
   }),
   actions: {
-    updateName(name: string) {
-      this.name = name;
+    async getUserInfo() {
+      const token = getToken();
+      if (token) {
+        this.userInfo = await getUserInfo();
+      }
+    },
+    loginOut() {
+      removeToken();
+      window.location.href = '/login';
     },
   },
 });

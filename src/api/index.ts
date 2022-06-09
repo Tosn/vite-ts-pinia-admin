@@ -1,10 +1,11 @@
 import { $post, $get } from '@/utils/request';
 
-const MockPrefix = (import.meta.env.MODE === 'development') ? '/mock' : '';
-export const loginIn = <T>(params: T) => $post('/api/login', params);
+// const MockPrefix = (import.meta.env.MODE === 'development') ? '/mock' : '';
+export const loginIn = <T>(data: T) => $post('/api/login', data);
+export const checkLogin = (code: string) => $get('/api/lark_login', { code });
+// 获取登录用户信息
+export const getUserInfo = () => $get('/api/userinfo');
 
-export const getUserInfo = () => $get(`${MockPrefix}/user`);
-export const getTags = () => $get(`${MockPrefix}/tags`);
 export default {
 
 };

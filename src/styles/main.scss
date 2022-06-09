@@ -37,7 +37,8 @@
     }
   }
   .layout-article {
-    flex: 1;
+    // flex: 1;
+    width: calc(100vw - 200px);
     display: flex;
     flex-direction: column;
     .header-bread {
@@ -47,6 +48,12 @@
       color: var(--tt-color-666);
       .bread-text {
         @include flex(center, flex-start);
+      }
+      .avatar {
+        img {
+          width: 20px;
+          border-radius: 50%;
+        }
       }
     }
     .header-tags {

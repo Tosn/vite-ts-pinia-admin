@@ -1,3 +1,21 @@
+.h-100 {
+  height: 100%;
+}
+.w-100 {
+  width: 100%;
+}
+.flex {
+  @include flex;
+}
+.flex-start {
+  @include flex(top, flex-start);
+}
+.flex-full {
+  flex: 1
+}
+.relative {
+  position: relative;
+}
 .m-r-4 {
   margin-right: 4px;
 }
@@ -16,6 +34,9 @@
 .m-l-10 {
   margin-left: 10px;
 }
+.m-l-20 {
+  margin-left: 20px;
+}
 .m-t-6 {
   margin-top: 6px;
 }
@@ -27,6 +48,12 @@
 }
 .m-t-40 {
   margin-top: 40px;
+}
+.m-b-4 {
+  margin-bottom: 4px;
+}
+.m-b-10 {
+  margin-bottom: 10px;
 }
 
 
@@ -48,4 +75,19 @@
 
 .pointer {
   cursor: pointer;
+}
+.common-whitebox {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.line-height-32 {
+  line-height: 32px;
+}
+.underline {
+  text-decoration: underline;
+}
+.text-primary {
+  color: var(--tt-color-primary)
 }

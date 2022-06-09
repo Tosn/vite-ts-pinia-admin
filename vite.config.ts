@@ -8,7 +8,7 @@ const VITE_PORT = 3333;
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), viteMockServe(), viteCompression() as any], // as any 处理报错，暂未查到解决方案
+  plugins: [vue(), viteMockServe(), viteCompression() as any],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '/src'),
@@ -25,7 +25,7 @@ export default defineConfig({
         rewrite: (_path) => _path.replace(/^\/dev-api/, ''),
       },
       '/dev-api': {
-        target: 'http://businesscard.webeye.cn/api',
+        target: 'http://35.222.204.160:8070/',
         changeOrigin: true,
         rewrite: (_path) => _path.replace(/^\/dev-api/, ''),
       },

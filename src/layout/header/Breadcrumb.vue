@@ -10,14 +10,15 @@
       <i class="iconfont icon-quanping m-r-10 pointer" @click="onScreenfullClick"></i>
       <el-dropdown>
         <span class="el-dropdown-link">
-          Admin
+          <span class="avatar"><img :src="userInfo.avatar" :alt="userInfo.name"></span>
+          {{ userInfo.name }}
           <el-icon class="el-icon--right">
             <arrow-down />
           </el-icon>
         </span>
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item>Login Out</el-dropdown-item>
+            <el-dropdown-item @click="userStore.loginOut">Login Out</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>
@@ -27,15 +28,19 @@
 
 <script setup lang="ts">
 import { ArrowDown } from '@element-plus/icons-vue';
-import { ref, watch } from 'vue';
+import { ref, watch, Ref } from 'vue';
 import { useRoute } from 'vue-router';
 import screenfull from 'screenfull';
 import { ElMessage } from 'element-plus';
+import { useUserStore } from '@/store/modules/user';
 import { useMenuStore } from '../../store/modules/menu';
+
+const userStore = useUserStore();
+const { userInfo } = userStore;
 
 const route = useRoute();
 const menuStore = useMenuStore();
-const breadList = ref([]);
+const breadList:Ref<any[]> = ref([]);
 
 const getBreadList = () => {
   breadList.value = route.matched.map((r) => (
@@ -63,6 +68,9 @@ const onScreenfullClick = () => {
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 2px;
+  .avatar {
+    margin-right: 6px;
+  }
 }
 </style>

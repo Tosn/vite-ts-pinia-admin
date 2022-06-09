@@ -1,5 +1,5 @@
 import { RouteRecordRaw } from 'vue-router';
-import BlankLayout from '@/layout/BlankLayout.vue';
+// import BlankLayout from '@/layout/BlankLayout.vue';
 /**
  * @meta
  * icon 图标
@@ -22,33 +22,33 @@ export const asyncRoutes:Array<RouteRecordRaw> = [
           name: '首页',
         },
       },
-      {
-        path: '/table',
-        component: BlankLayout,
-        redirect: '/table/all',
-        meta: {
-          icon: 'icon-table',
-          name: '表格',
-        },
-        children: [
-          {
-            path: '/table/all',
-            component: () => import('@/views/table/All.vue'),
-            meta: {
-              icon: 'icon-table',
-              name: '全部',
-            },
-          },
-          {
-            path: '/table/list',
-            component: () => import('@/views/table/All.vue'),
-            meta: {
-              icon: 'icon-table',
-              name: '列表',
-            },
-          },
-        ],
-      },
+      // {
+      //   path: '/table',
+      //   component: BlankLayout,
+      //   redirect: '/table/all',
+      //   meta: {
+      //     icon: 'icon-table',
+      //     name: '表格',
+      //   },
+      //   children: [
+      //     {
+      //       path: '/table/all',
+      //       component: () => import('@/views/table/All.vue'),
+      //       meta: {
+      //         icon: 'icon-table',
+      //         name: '全部',
+      //       },
+      //     },
+      //     {
+      //       path: '/table/list',
+      //       component: () => import('@/views/table/All.vue'),
+      //       meta: {
+      //         icon: 'icon-table',
+      //         name: '列表',
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
 ];
@@ -56,7 +56,7 @@ export const asyncRoutes:Array<RouteRecordRaw> = [
 export const staticRoutes: Array<RouteRecordRaw> = [
   {
     path: '/login',
-    component: () => import('@/views/reg/Login.vue')
+    component: () => import('@/views/reg/Login.vue'),
   },
   // {
   //   path: '/:w+',
