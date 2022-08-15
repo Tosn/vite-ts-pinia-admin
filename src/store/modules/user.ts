@@ -3,11 +3,22 @@ import { store } from '@/store';
 import { getUserInfo } from '@/api';
 import { getToken, removeToken } from '@/utils/token';
 
+interface User {
+  name: string;
+  avatar: string;
+}
 export const useUserStore = defineStore({
   id: 'user',
-  state: () => ({
-    userInfo: {},
-  }),
+  state(): {
+    userInfo: User
+    } {
+    return {
+      userInfo: {
+        name: '',
+        avatar: '',
+      },
+    };
+  },
   actions: {
     async getUserInfo() {
       const token = getToken();

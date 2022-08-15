@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { store } from '@/store';
 import router, { routes } from '@/router';
 
 const homeRoute: MenuTag = { path: routes[0].path, name: routes[0].meta?.name as string, canClose: false };
@@ -19,6 +20,9 @@ export const useMenuStore = defineStore({
     toggleMenu() {
       this.isCollapse = !this.isCollapse;
     },
+    closeMenu() {
+      this.isCollapse = true;
+    },
     addTagList(tag: MenuTag) {
       // 如果传递tag 视为删除 否则为切换或者新增
       this.tagList.push(tag);
@@ -34,6 +38,10 @@ export const useMenuStore = defineStore({
     },
   },
 });
+
+export function useMenuStoreWithOut() {
+  return useMenuStore(store);
+}
 
 export default {
   useMenuStore,

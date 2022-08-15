@@ -28,7 +28,7 @@ router.beforeEach(async (to, from) => {
       // 如果有token 进行获取用户信息操作
       try {
         const { userInfo } = useUserStoreWithOut();
-        if (!Object.keys(userInfo).length) {
+        if (!userInfo.name) {
           await useUserStoreWithOut().getUserInfo();
         }
       } catch (error) {

@@ -11,7 +11,10 @@ export const checkObjectInList = (item: ObjAny, list: ObjAny[]): boolean => {
 
 // 统一延迟方法
 export const fnDelay = (fn: Function, delay: number = 500) => {
-  setTimeout(fn, delay)
-}
+  setTimeout(fn, delay);
+};
+
+// 判断是否是手机
+export const isMobile = () => document.body.getBoundingClientRect().width <= 992;
 
 export default {};

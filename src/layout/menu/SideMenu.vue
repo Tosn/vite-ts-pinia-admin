@@ -1,8 +1,8 @@
 <template>
-  <div class="layout-menu" :class="menuStore.isCollapse ? 'w-64' : 'w-200'">
+  <div class="layout-menu">
     <div class="project-name">
       <img class="logo" src="../../assets/images/logo.png" :alt="systemName" :title="systemName" >
-      <span class="m-l-10" v-if="!menuStore.isCollapse">{{ systemName }}</span>
+      <h1 class="m-l-10" v-if="!menuStore.isCollapse">{{ systemName }}</h1>
     </div>
     <div class="project-menu">
       <el-menu
